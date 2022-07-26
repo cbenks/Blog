@@ -10,6 +10,7 @@ const main = async () => {
   await Topic.insertMany(topics)
   console.log('Created some topics!')
 }
+
 const run = async () => {
   await main()
   db.close()
