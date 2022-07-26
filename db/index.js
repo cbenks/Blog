@@ -1,9 +1,13 @@
 const mongoose = require('mongoose')
+require('dotenv').config()
 
 let MONGODB_URI = 'mongodb://127.0.0.1:27017/blogDatabase'
 
 mongoose
-  .connect(MONGODB_URI, { useUnifiedTopology: true, useNewUrlParser: true })
+  .connect(MONGODB_URI, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true
+  })
   .then(() => {
     console.log('Successfully connected to MongoDB.')
   })
