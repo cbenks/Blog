@@ -14,6 +14,17 @@ const createBlog = async (req, res) => {
   }
 }
 
+const readAllBlogs = async (req, res) => {
+  try {
+    const blogs = await Blog.find()
+    return res.status(201).json({
+      blogs
+    })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+
 // Topic queries
 
 const createTopic = async (req, res) => {
@@ -28,7 +39,20 @@ const createTopic = async (req, res) => {
   }
 }
 
+const readAllTopics = async (req, res) => {
+  try {
+    const topics = await Topic.find()
+    return res.status(201).json({
+      topics
+    })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+
 module.exports = {
   createBlog,
-  createTopic
+  createTopic,
+  readAllBlogs,
+  readAllTopics
 }

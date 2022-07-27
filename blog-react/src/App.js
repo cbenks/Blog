@@ -7,52 +7,75 @@ import Nav from './pages/Nav'
 import Blog from './components/Blog'
 import Topics from './components/Topics'
 import Create from './components/Create'
+import Form from './components/Form'
 
 const BASE_URL = 'http://localhost:3001/api'
 
 function App() {
-  let [newBlog, setNewBlog] = useState({
+  // const [blog, setBlog] = useState('')
+
+  const initialState = {
     topic: '',
     title: '',
     body: '',
     author: ''
-  })
+  }
+
+  const [formState, setFormState] = useState(initialState)
 
   const handleChange = (event) => {
-    let blogPost = {
-      ...newBlog,
-      [event.currentTarget.id]: event.currentTarget.value
-    }
-    setNewBlog(blogPost)
-    console.log(event.target.value)
+    setFormState({
+      ...formState,
+      [event.target.id]: event.target.value
+    })
   }
 
   const handleSubmit = async (event) => {
+    event.preventDefault()
     try {
-      let res = await axios.post(`${BASE_URL}/blogs`, newBlog)
+      await axios.post(`${BASE_URL}/blogs`, formState)
     } catch (err) {
       console.log(err)
     }
+    setFormState(initialState)
   }
+
+  useEffect(() => {
+    const getBlogs = async () => {
+      try {
+        let res = await axios.get(`${BASE_URL}/blogs`)
+        console.log(res.data)
+        // setBlog(res.data)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    getBlogs()
+  }, [])
+  console.log(formState)
 
   return (
     <div className="App">
-      <header class="appHead">
+      <header className="appHead">
         <Nav />
       </header>
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/topics" element={<Topics />} />
-          <Route path="/Blog" element={<Blog />} />
+          <Route path="/blog" element={<Blog formState={formState} />} />
+          <Route path="/create" element={<Create />} />
           <Route
-            path="/create"
+            path="/form"
             element={
-              <Create handleChange={handleChange} handleSubmit={handleSubmit} />
+              <Form handleChange={handleChange} handleSubmit={handleSubmit} />
             }
           />
         </Routes>
       </main>
+      <div>
+        <h1>{formState.title}</h1>
+      </div>
     </div>
   )
 }

@@ -1,10 +1,10 @@
 
 
-const Blog = () => {
+const Blog = (props) => {
   return(
-<div class='blogComp'>
+<div className='blogComp'>
 
-  <h1>topic 1</h1>
+  <h1>Blogs</h1>
 
 </div>
   )
