@@ -1,0 +1,79 @@
+
+/* app */
+.appHead{
+background-color: cadetblue;
+}
+
+/* home */
+.welcome{
+  border-bottom: 5px solid black;
+}
+
+ /* blog */
+
+.blogComp {
+  text-align: center;
+}
+
+.blogNavLink {
+margin: 20px;
+}
+
+
+
+/* nav */
+
+.navLink {
+  margin:20px;
+}
+
+
+/* create new */
+
+.blog{
+  border-radius: 1%;
+}
+
+
+/* .create {
+  text-align: center;
+} */
+
+/* .newBlog{
+  display: grid;
+  grid-template-columns: 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr;
+  grid-template-rows: 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr;
+  gap: 10px solid black;
+  width: 80%;
+  margin: 50px;
+}
+
+#topic {
+grid-column-start: 1;
+grid-column-end: 2;
+grid-row-start: 1;
+grid-row-end: 2;
+}
+
+.title{
+grid-column-start: 3;
+grid-column-end: 4;
+grid-row-start: 1;
+grid-row-end: 2;
+}
+
+.author {
+  grid-column-start: 5;
+grid-column-end: 6;
+grid-row-start: 1;
+grid-row-end: 2;
+}
+
+
+.blog{
+  grid-column-start: 2;
+  grid-column-end: 8;
+  grid-row-start: 3;
+  grid-row-end: 8;
+} */
+
