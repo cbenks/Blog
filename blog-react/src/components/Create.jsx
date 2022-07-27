@@ -1,4 +1,4 @@
-const Create = () => {
+const Create = (props) => {
   return(
     <div class='create'>
       <header>
@@ -6,11 +6,11 @@ const Create = () => {
       </header>
       <div></div>
       <div class='newBlog'>
-        <form>
-          <div id='topic'><input placeholder='topic..'></input></div>
-          <div class='title'><input placeholder='title...'></input></div>
-          <div class='author'><input placeholder='authored by...'></input></div>
-          <textarea class='blog' placeholder='...2500 characters or less..' rows='50' cols='80' maxlength='2500' ></textarea>
+        <form onSubmit={props.handleSubmit}>
+          <input placeholder='topic..' onChange={props.handleChange}/>
+          <input placeholder='title...' onChange={props.handleChange}/>
+          <div class='author'><input placeholder='authored by...' onChange={props.handleChange}/></div>
+          <textarea class='blog' placeholder='...2500 characters or less..' rows='50' cols='80' maxlength='2500' onChange={props.handleChange}/>
           <button type='submit'>Submit</button>
           </form>
       </div>

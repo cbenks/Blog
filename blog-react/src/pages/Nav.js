@@ -6,8 +6,8 @@ const Nav = () => {
       <Link class="navLink" to="/">
         Home
       </Link>
-      <Link class="navLink" to="/blog">
-        Blog
+      <Link class="navLink" to="/topics">
+        Topics
       </Link>
       <Link class="navLaink" to="/create">
         Create

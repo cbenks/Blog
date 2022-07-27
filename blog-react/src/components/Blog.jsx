@@ -1,13 +1,10 @@
-import { Link } from 'react-router-dom'
+
 
 const Blog = () => {
   return(
 <div class='blogComp'>
-  <nav class='blogNav'>
-    <Link class='blogNavLink' to='/topics'>Topics</Link>
-    <Link class='blogNavLink back' to='/'>Back</Link>
-  </nav>
-  
+
+  <h1>topic 1</h1>
 
 </div>
   )
