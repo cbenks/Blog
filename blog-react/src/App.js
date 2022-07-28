@@ -12,39 +12,35 @@ import Form from './components/Form'
 const BASE_URL = 'http://localhost:3001/api'
 
 function App() {
+  const initialState = {
+    topic: '',
+    title: '',
+    body: '',
+    author: ''
+  }
+
+  const [formState, setFormState] = useState({
+    topic: '',
+    title: '',
+    body: '',
+    author: ''
+  })
+
+  const handleChange = (event) => {
+    setFormState({
+      ...formState,
+      [event.currentTarget.id]: event.currentTarget.value
+    })
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    let res = await axios.post(`${BASE_URL}/blogs`, formState)
+    console.log(res)
+    setFormState(initialState)
+  }
+
   // const [blog, setBlog] = useState('')
-
-  // const initialState = {
-  //   topic: '',
-  //   title: '',
-  //   body: '',
-  //   author: ''
-  // }
-
-  // const [formState, setFormState] = useState({
-  //   topic: '',
-  //   title: '',
-  //   body: '',
-  //   author: ''
-  // })
-
-  // const handleChange = (event) => {
-  //   let stupid = {
-  //     ...formState,
-  //     [event.currentTarget.id]: event.currentTarget.value
-  //   }
-  //   setFormState(stupid)
-  // }
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault()
-  //   try {
-  //     await axios.post(`${BASE_URL}/blogs`, formState)
-  //   } catch (err) {
-  //     console.log(err)
-  //   }
-  //   setFormState(initialState)
-  // }
 
   // useEffect(() => {
   //   const getBlogs = async () => {
@@ -59,6 +55,8 @@ function App() {
   //   getBlogs()
   // }, [])
 
+  const displayBlog = () => {}
+
   return (
     <div className="App">
       <header className="appHead">
@@ -69,8 +67,16 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/topics" element={<Topics />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/create" element={<Create />} />
-          <Route path="/form" element={<Form />} />
+          <Route
+            path="/create"
+            element={
+              <Create
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+                formState={formState}
+              />
+            }
+          />
         </Routes>
       </main>
       <div></div>
