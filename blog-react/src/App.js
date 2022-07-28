@@ -26,6 +26,8 @@ function App() {
     author: ''
   })
 
+  const [newBlogs, setNewBlogs] = useState('')
+
   const handleChange = (event) => {
     setFormState({
       ...formState,
@@ -40,8 +42,6 @@ function App() {
     setFormState(initialState)
   }
 
-  // const [blog, setBlog] = useState('')
-
   // useEffect(() => {
   //   const getBlogs = async () => {
   //     try {
@@ -54,8 +54,17 @@ function App() {
   //   }
   //   getBlogs()
   // }, [])
-
-  const displayBlog = () => {}
+  useEffect(() => {
+    const displayBlog = async () => {
+      try {
+        let res = await axios.get(`${BASE_URL}/blogs`)
+        setNewBlogs(res.data.blogs)
+      } catch (err) {
+        console.log(err.response.data)
+      }
+    }
+    displayBlog()
+  }, [])
 
   return (
     <div className="App">
@@ -64,9 +73,8 @@ function App() {
       </header>
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Blog newBlogs={newBlogs} />} />
           <Route path="/topics" element={<Topics />} />
-          <Route path="/blog" element={<Blog />} />
           <Route
             path="/create"
             element={
