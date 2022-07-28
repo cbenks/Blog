@@ -14,45 +14,50 @@ const BASE_URL = 'http://localhost:3001/api'
 function App() {
   // const [blog, setBlog] = useState('')
 
-  const initialState = {
-    topic: '',
-    title: '',
-    body: '',
-    author: ''
-  }
+  // const initialState = {
+  //   topic: '',
+  //   title: '',
+  //   body: '',
+  //   author: ''
+  // }
 
-  const [formState, setFormState] = useState(initialState)
+  // const [formState, setFormState] = useState({
+  //   topic: '',
+  //   title: '',
+  //   body: '',
+  //   author: ''
+  // })
 
-  const handleChange = (event) => {
-    setFormState({
-      ...formState,
-      [event.target.id]: event.target.value
-    })
-  }
+  // const handleChange = (event) => {
+  //   let stupid = {
+  //     ...formState,
+  //     [event.currentTarget.id]: event.currentTarget.value
+  //   }
+  //   setFormState(stupid)
+  // }
 
-  const handleSubmit = async (event) => {
-    event.preventDefault()
-    try {
-      await axios.post(`${BASE_URL}/blogs`, formState)
-    } catch (err) {
-      console.log(err)
-    }
-    setFormState(initialState)
-  }
+  // const handleSubmit = (event) => {
+  //   event.preventDefault()
+  //   try {
+  //     await axios.post(`${BASE_URL}/blogs`, formState)
+  //   } catch (err) {
+  //     console.log(err)
+  //   }
+  //   setFormState(initialState)
+  // }
 
-  useEffect(() => {
-    const getBlogs = async () => {
-      try {
-        let res = await axios.get(`${BASE_URL}/blogs`)
-        console.log(res.data)
-        // setBlog(res.data)
-      } catch (err) {
-        console.log(err)
-      }
-    }
-    getBlogs()
-  }, [])
-  console.log(formState)
+  // useEffect(() => {
+  //   const getBlogs = async () => {
+  //     try {
+  //       let res = await axios.get(`${BASE_URL}/blogs`)
+  //       console.log(res.data)
+  //       // setBlog(res.data)
+  //     } catch (err) {
+  //       console.log(err)
+  //     }
+  //   }
+  //   getBlogs()
+  // }, [])
 
   return (
     <div className="App">
@@ -63,19 +68,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/topics" element={<Topics />} />
-          <Route path="/blog" element={<Blog formState={formState} />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/create" element={<Create />} />
-          <Route
-            path="/form"
-            element={
-              <Form handleChange={handleChange} handleSubmit={handleSubmit} />
-            }
-          />
+          <Route path="/form" element={<Form />} />
         </Routes>
       </main>
-      <div>
-        <h1>{formState.title}</h1>
-      </div>
+      <div></div>
     </div>
   )
 }
