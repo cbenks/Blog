@@ -4,7 +4,7 @@ const Nav = () => {
   return (
     <nav>
       <Link className="navLink" to="/">
-        Home
+        Blogs
       </Link>
       <Link className="navLink" to="/topics">
         Topics
