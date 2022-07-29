@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Wallpoet&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=KoHo:wght@500&display=swap');
 /* app */
 .appHead{
 background-color: rgb(57, 230, 236);
@@ -42,6 +42,11 @@ margin-bottom: 80px;
 
 /* create new */
 
+.createTitle {
+  text-align:center;
+  font-family: 'Poppins', sans-serif;
+}
+
 .blog{
   border-radius: 1%;
 }
@@ -51,9 +56,7 @@ margin-bottom: 80px;
 }
 
 
-/* .create {
-  text-align: center;
-} */
+
 
 .newBlog{
   display: grid;
@@ -62,7 +65,8 @@ margin-bottom: 80px;
   gap: 10px solid black;
   width: 80%;
   margin: 50px;
-  font-family: 'Wallpoet', cursive;
+  font-family: 'KoHo', sans-serif;
+
 }
 
 #topic {
@@ -73,8 +77,8 @@ grid-row-end: 2;
 }
 
 .title{
-grid-column-start: 3;
-grid-column-end: 4;
+grid-column-start: 1;
+grid-column-end: 2;
 grid-row-start: 1;
 grid-row-end: 2;
 }
