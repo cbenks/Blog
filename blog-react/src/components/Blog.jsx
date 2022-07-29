@@ -23,7 +23,7 @@ const Blog = (props) => {
   
   return (
 <div className='singleBlog'>
-  <Link class="navLink" to='/blogs'>Back</Link>
+  <Link class="back" to='/blogs'>Back</Link>
   <div className='showcaseBlogs'>
     <h1 className='singleBlogTitle'>{blog.title}</h1>
     <h3>by:{blog.author}</h3>
