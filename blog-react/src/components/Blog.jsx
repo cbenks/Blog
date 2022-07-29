@@ -22,12 +22,12 @@ const Blog = (props) => {
   }, [])
   
   return (
-<div>
+<div className='singleBlog'>
   <Link to='/blogs'>Back</Link>
   <div className='showcaseBlogs'>
     <h1 className='singleBlogTitle'>{blog.title}</h1>
     <h3>by:{blog.author}</h3>
-    <p>{blog.body}</p>
+    <p className='singleBlogBody'>{blog.body}</p>
     <button>Delete</button>
   </div>
 

@@ -16,7 +16,7 @@ const showBlog = (blog) => {
   return(
 <div className='blogComp'>
 <h1 className='blogsHeading' >Blogs</h1>
-<h3>Select blog to view</h3>
+<h3 className='blogsHeading' >(Select blog to view)</h3>
 <div >
   {newBlogs.map((blog) => (
     <div className='allBlogs' onClick={() => showBlog(blog)} key={blog._id}>
