@@ -5,16 +5,15 @@ import { useParams } from 'react-router-dom'
 
 const Blog = (props) => {
 
-  const [blog, setBlog] = useState('')
+  const [blog, setBlog] = useState({})
 
   let { id } = useParams()
   
-  const newBlogs = newBlogs.props
 
   useEffect(() => {
-    let selectedBlog = newBlogs.find((blog) => blog.id === parseInt(id))
+    let selectedBlog = props.newBlogs.find((blog) => blog._id === id)
     setBlog(selectedBlog)
-  }, [newBlogs, id])
+  }, [blog])
   
   return (
 <div>
@@ -23,6 +22,7 @@ const Blog = (props) => {
     <h1>{blog.title}</h1>
     <h3>by:{blog.author}</h3>
     <p>{blog.body}</p>
+    <button>Delete</button>
   </div>
 
 </div>

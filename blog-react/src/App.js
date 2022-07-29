@@ -73,7 +73,7 @@ function App() {
               />
             }
           />
-          <Route path="blogs/:_id" element={<Blog newBlogs={newBlogs} />} />
+          <Route path="/blogs/:id" element={<Blog newBlogs={newBlogs} />} />
         </Routes>
       </main>
       <div></div>
