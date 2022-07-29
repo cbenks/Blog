@@ -10,7 +10,11 @@ router.post('/blogs', controllers.createBlog)
 
 router.get('/blogs', controllers.readAllBlogs)
 
-router.get('/blogs/:_id', controllers.readBlog)
+router.get('/blogs/:id', controllers.readBlog)
+
+router.put('/blogs/:id', controllers.updateBlog)
+
+router.delete('/blogs/:id', controllers.deleteBlog)
 
 //topic
 

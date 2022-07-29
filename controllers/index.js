@@ -36,6 +36,36 @@ const readBlog = async (req, res) => {
   }
 }
 
+const updateBlog = async (req, res) => {
+  try {
+    const { id } = req.params
+    await Blog.findByIdAndUpdate(id, req.body, { new: true }, (err, plant) => {
+      if (err) {
+        res.status(500).send(err)
+      }
+      if (!blog) {
+        res.status(500).send('Blog not found!')
+      }
+      return res.status(200).json(blog)
+    })
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const deleteBlog = async (req, res) => {
+  try {
+    const { id } = req.params
+    const deleted = await Blog.findByIdAndDelete(id)
+    if (deleted) {
+      return res.status(200).send('Blog deleted')
+    }
+    throw new Error('Blog not found')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 // Topic queries
 
 const createTopic = async (req, res) => {
@@ -66,5 +96,7 @@ module.exports = {
   createTopic,
   readBlog,
   readAllBlogs,
-  readAllTopics
+  readAllTopics,
+  updateBlog,
+  deleteBlog
 }

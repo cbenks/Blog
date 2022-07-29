@@ -9,13 +9,23 @@ background-color: rgb(57, 230, 236);
   border-bottom: 5px solid black;
 }
 
- /* blog */
+ /* blogs */
 
 .blogComp {
   text-align: center;
 }
 
+.allBlogs {
+  margin: 100px;
+}
 
+/* .allBlogsTitle {
+margin-top: 80px;
+}
+
+.allBlogsAuthor {
+margin-bottom: 80px;
+} */
 
 
 

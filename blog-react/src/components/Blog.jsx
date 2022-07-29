@@ -19,7 +19,7 @@ const Blog = (props) => {
   return (
 <div>
   <Link to='/blogs'>Back</Link>
-  <div>
+  <div className='showcaseBlogs'>
     <h1>{blog.title}</h1>
     <h3>by:{blog.author}</h3>
     <p>{blog.body}</p>

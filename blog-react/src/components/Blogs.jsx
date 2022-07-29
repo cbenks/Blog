@@ -17,14 +17,14 @@ const showBlog = (blog) => {
 <div className='blogComp'>
 <h1>Blogs</h1>
 <h3>Select blog to view</h3>
-
+<div >
   {newBlogs.map((blog) => (
-    <div onClick={() => showBlog(blog)} key={blog._id}>
-    <h2>{blog.title}</h2>
-    <h3>authored by:{blog.author}</h3>
+    <div className='allBlogs' onClick={() => showBlog(blog)} key={blog._id}>
+    <h2 className='allBlogsTitle'>{blog.title}</h2>
+    <h3 className='allBlogsAuthor'>authored by:{blog.author}</h3>
     </div>
   ))}
-
+</div>
 </div>
   )
 }
