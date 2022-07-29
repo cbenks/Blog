@@ -15,7 +15,7 @@ const showBlog = (blog) => {
 
   return(
 <div className='blogComp'>
-<h1>Blogs</h1>
+<h1 className='blogsHeading' >Blogs</h1>
 <h3>Select blog to view</h3>
 <div >
   {newBlogs.map((blog) => (

@@ -17,7 +17,7 @@ const Blog = (props) => {
 
   useEffect(() => {
     const deleteBlog = () => {
-     
+    
     }
   }, [])
   
