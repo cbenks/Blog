@@ -52,7 +52,11 @@ margin-left: 4ch;
   line-height: 1.8;
 }
 
-
+.button {
+  margin: 10px;
+  font-family: 'Poppins', sans-serif;
+  background-color: rgb(57, 230, 236);
+}
 
 
 /* nav */
