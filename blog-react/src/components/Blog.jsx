@@ -28,7 +28,8 @@ const Blog = (props) => {
     <h1 className='singleBlogTitle'>{blog.title}</h1>
     <h3>by:{blog.author}</h3>
     <p className='singleBlogBody'>{blog.body}</p>
-    <button>Delete</button>
+    <button className="button del">Delete</button>
+    <button className="button edit">Edit</button>
   </div>
 
 </div>
