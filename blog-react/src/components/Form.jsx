@@ -13,7 +13,7 @@ const Form = (props) => {
       </div>
       <label htmlFor='body'></label>
       <textarea id='body' className='blog' placeholder='...2500 characters or less..' rows='50' cols='80' maxLength='2500' onChange={props.handleChange} />
-      <button type='submit'>Submit</button>
+      <button className='submit' type='submit'>Submit</button>
     </form>
   </div>
   )

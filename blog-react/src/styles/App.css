@@ -56,7 +56,7 @@ margin-bottom: 80px;
 }
 
 
-
+/* form */
 
 .newBlog{
   display: grid;
@@ -96,5 +96,10 @@ grid-row-end: 2;
   grid-column-end: 8;
   grid-row-start: 3;
   grid-row-end: 8;
+}
+
+.submit {
+  font-family: 'Poppins', sans-serif;
+  background-color: rgb(57, 230, 236);
 }
 
