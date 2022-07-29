@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 
 const Topics = () => {
   return(
@@ -6,7 +5,7 @@ const Topics = () => {
       <div>
         <h1>Topics</h1> 
         <ul>
-          <li><Link to='/blog'>topic 1</Link></li>
+          <li>topic 1</li>
           <li>2</li>
           <li>3</li>
           <li>4</li>

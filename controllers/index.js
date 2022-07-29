@@ -25,6 +25,17 @@ const readAllBlogs = async (req, res) => {
   }
 }
 
+const readBlog = async (req, res) => {
+  try {
+    const blogs = await Blog.findById()
+    return res.status(201).json({
+      blogs
+    })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+
 // Topic queries
 
 const createTopic = async (req, res) => {
@@ -53,6 +64,7 @@ const readAllTopics = async (req, res) => {
 module.exports = {
   createBlog,
   createTopic,
+  readBlog,
   readAllBlogs,
   readAllTopics
 }

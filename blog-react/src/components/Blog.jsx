@@ -1,30 +1,29 @@
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+
 
 const Blog = (props) => {
 
-let navigate = useNavigate()
-const newBlogs = props.newBlogs
+  const [blog, setBlog] = useState('')
 
-
-const showBlog = (blog) => {
-  navigate(`${blog.id}`)
-}
-
-
-
-  return(
-<div className='blogComp'>
+  let { id } = useParams()
   
-{newBlogs.map((blog) => (
-<div onClick={() => showBlog(blog)} key={blog.id} >
-  <h1>Blogs</h1>
-  <h3>title:{blog.title}</h3>
-  <h3>topic:{blog.topic}</h3>
-  <h4>author:{blog.author}</h4>
-  <p>blog:{blog.body}</p>
-</div>
-))}
+  const newBlogs = newBlogs.props
 
+  useEffect(() => {
+    let selectedBlog = newBlogs.find((blog) => blog.id === parseInt(id))
+    setBlog(selectedBlog)
+  }, [newBlogs, id])
+  
+  return (
+<div>
+  <Link to='/blogs'>Back</Link>
+  <div>
+    <h1>{blog.title}</h1>
+    <h3>by:{blog.author}</h3>
+    <p>{blog.body}</p>
+  </div>
 
 </div>
   )

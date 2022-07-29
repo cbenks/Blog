@@ -10,6 +10,8 @@ router.post('/blogs', controllers.createBlog)
 
 router.get('/blogs', controllers.readAllBlogs)
 
+router.get('/blogs/:_id', controllers.readBlog)
+
 //topic
 
 router.post('/topics', controllers.createTopic)

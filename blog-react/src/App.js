@@ -2,12 +2,11 @@ import './styles/App.css'
 import { Routes, Route } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import Home from './pages/Home'
 import Nav from './pages/Nav'
-import Blog from './components/Blog'
+import Blogs from './components/Blogs'
 import Topics from './components/Topics'
 import Create from './components/Create'
-import Form from './components/Form'
+import Blog from './components/Blog'
 
 const BASE_URL = 'http://localhost:3001/api'
 
@@ -26,7 +25,7 @@ function App() {
     author: ''
   })
 
-  const [newBlogs, setNewBlogs] = useState('')
+  const [newBlogs, setNewBlogs] = useState([])
 
   const handleChange = (event) => {
     setFormState({
@@ -42,23 +41,12 @@ function App() {
     setFormState(initialState)
   }
 
-  // useEffect(() => {
-  //   const getBlogs = async () => {
-  //     try {
-  //       let res = await axios.get(`${BASE_URL}/blogs`)
-  //       console.log(res.data)
-  //       // setBlog(res.data)
-  //     } catch (err) {
-  //       console.log(err)
-  //     }
-  //   }
-  //   getBlogs()
-  // }, [])
   useEffect(() => {
     const displayBlog = async () => {
       try {
         let res = await axios.get(`${BASE_URL}/blogs`)
         setNewBlogs(res.data.blogs)
+        console.log(res.data.blogs)
       } catch (err) {
         console.log(err.response.data)
       }
@@ -73,7 +61,7 @@ function App() {
       </header>
       <main>
         <Routes>
-          <Route path="/" element={<Blog newBlogs={newBlogs} />} />
+          <Route path="/blogs" element={<Blogs newBlogs={newBlogs} />} />
           <Route path="/topics" element={<Topics />} />
           <Route
             path="/create"
@@ -85,6 +73,7 @@ function App() {
               />
             }
           />
+          <Route path="blogs/:_id" element={<Blog newBlogs={newBlogs} />} />
         </Routes>
       </main>
       <div></div>
