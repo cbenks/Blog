@@ -9,7 +9,7 @@ const Nav = () => {
       <Link className="navLink" to="/topics">
         Topics
       </Link>
-      <Link className="navLaink" to="/create">
+      <Link className="navLink" to="/create">
         Create
       </Link>
     </nav>

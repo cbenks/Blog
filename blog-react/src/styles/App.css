@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Wallpoet&display=swap');
 
 /* app */
 .appHead{
@@ -33,6 +35,8 @@ margin-bottom: 80px;
 
 .navLink {
   margin:20px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
 }
 
 

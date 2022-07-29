@@ -14,6 +14,8 @@ const Blog = (props) => {
     let selectedBlog = props.newBlogs.find((blog) => blog._id === id)
     setBlog(selectedBlog)
   }, [blog])
+
+  
   
   return (
 <div>
