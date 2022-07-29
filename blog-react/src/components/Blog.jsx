@@ -15,13 +15,13 @@ const Blog = (props) => {
     setBlog(selectedBlog)
   }, [blog])
 
-  
+
   
   return (
 <div>
   <Link to='/blogs'>Back</Link>
   <div className='showcaseBlogs'>
-    <h1>{blog.title}</h1>
+    <h1 className='singleBlogTitle'>{blog.title}</h1>
     <h3>by:{blog.author}</h3>
     <p>{blog.body}</p>
     <button>Delete</button>

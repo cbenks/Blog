@@ -46,18 +46,23 @@ margin-bottom: 80px;
   border-radius: 1%;
 }
 
+.singleBlogTitle {
+  font-family: 'Wallpoet', cursive;
+}
+
 
 /* .create {
   text-align: center;
 } */
 
-/* .newBlog{
+.newBlog{
   display: grid;
   grid-template-columns: 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr;
   grid-template-rows: 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr;
   gap: 10px solid black;
   width: 80%;
   margin: 50px;
+  font-family: 'Wallpoet', cursive;
 }
 
 #topic {
@@ -87,5 +92,5 @@ grid-row-end: 2;
   grid-column-end: 8;
   grid-row-start: 3;
   grid-row-end: 8;
-} */
+}
 
