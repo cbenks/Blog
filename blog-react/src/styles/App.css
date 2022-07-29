@@ -56,12 +56,20 @@ margin-left: 4ch;
   margin-left: 10ch;
   margin-right: 10ch;
   width: 60%;
-  
+}
+
+.singleBlogTitle {
+  text-align: center;
+}
+
+.singleBlogAuthor {
+  text-align: center;
 }
 
 .singleBlogBody {
   font-size: 2ch;
   line-height: 1.8;
+  margin-left: 5ch;
 }
 
 .button {

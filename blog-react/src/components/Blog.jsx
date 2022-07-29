@@ -26,7 +26,7 @@ const Blog = (props) => {
   <Link class="back" to='/blogs'>Back</Link>
   <div className='showcaseBlogs'>
     <h1 className='singleBlogTitle'>{blog.title}</h1>
-    <h3>by:{blog.author}</h3>
+    <h3 className="singleBlogAuthor" >by:{blog.author}</h3>
     <p className='singleBlogBody'>{blog.body}</p>
     <button className="button del">Delete</button>
     <button className="button edit">Edit</button>
