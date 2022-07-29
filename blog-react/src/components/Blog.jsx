@@ -15,7 +15,11 @@ const Blog = (props) => {
     setBlog(selectedBlog)
   }, [blog])
 
-
+  useEffect(() => {
+    const deleteBlog = () => {
+      
+    }
+  }, [])
   
   return (
 <div>
