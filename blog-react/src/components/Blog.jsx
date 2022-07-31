@@ -22,10 +22,9 @@ const Blog = (props) => {
 
 
   const deleteBlog = async (blog) => {
-    let blogToDelete = blog._id
-    console.log(blogToDelete)
+    let selectedBlog = props.newBlogs.find((blog) => blog._id === id)
     try {
-      let res = await axios.delete(`${BASE_URL}/blogs/:${blogToDelete}`)
+      let res = await axios.delete(`${BASE_URL}/blogs/${id}`)
       console.log(res)
     } catch (err) {
       console.log(err.response.data)
