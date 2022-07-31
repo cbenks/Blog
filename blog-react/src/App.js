@@ -37,7 +37,6 @@ function App() {
   const handleSubmit = async (event) => {
     event.preventDefault()
     let res = await axios.post(`${BASE_URL}/blogs`, formState)
-    console.log(res)
     setFormState(initialState)
   }
 
@@ -70,6 +69,7 @@ function App() {
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
                 formState={formState}
+                initialState={initialState}
               />
             }
           />

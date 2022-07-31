@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 
 const Blog = (props) => {
 
   const BASE_URL = 'http://localhost:3001/api'
+  let navigate = useNavigate()
 
   const [blog, setBlog] = useState({})
 
@@ -24,8 +26,8 @@ const Blog = (props) => {
   const deleteBlog = async (blog) => {
     let selectedBlog = props.newBlogs.find((blog) => blog._id === id)
     try {
-      let res = await axios.delete(`${BASE_URL}/blogs/${id}`)
-      console.log(res)
+      let res = await axios.delete(`${BASE_URL}/blogs/${id}`);
+      navigate(`/blogs`)
     } catch (err) {
       console.log(err.response.data)
     }
