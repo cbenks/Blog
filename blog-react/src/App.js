@@ -1,6 +1,7 @@
 import './styles/App.css'
-import { Routes, Route } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import Nav from './pages/Nav'
 import Blogs from './components/Blogs'
@@ -11,6 +12,7 @@ import Blog from './components/Blog'
 const BASE_URL = 'http://localhost:3001/api'
 
 function App() {
+  const nav = useNavigate()
   const initialState = {
     topic: '',
     title: '',
@@ -38,6 +40,7 @@ function App() {
     event.preventDefault()
     let res = await axios.post(`${BASE_URL}/blogs`, formState)
     setFormState(initialState)
+    nav(`/blogs`)
   }
 
   useEffect(() => {
@@ -45,7 +48,6 @@ function App() {
       try {
         let res = await axios.get(`${BASE_URL}/blogs`)
         setNewBlogs(res.data.blogs)
-        console.log(res.data.blogs)
       } catch (err) {
         console.log(err.response.data)
       }

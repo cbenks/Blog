@@ -1,17 +1,12 @@
 import { useNavigate } from 'react-router-dom'
 
 const Blogs = (props) => {
-
-let navigate = useNavigate()
+const nav = useNavigate()
 const newBlogs = props.newBlogs
 
-
 const showBlog = (blog) => {
-  navigate(`${blog._id}`)
+  nav(`${blog._id}`)
 }
-
-
-
 
   return(
 <div className='blogComp'>

@@ -9,19 +9,13 @@ const Blog = (props) => {
 
   const BASE_URL = 'http://localhost:3001/api'
   let navigate = useNavigate()
-
-  const [blog, setBlog] = useState({})
-
   let { id } = useParams()
-  
-
+  const [blog, setBlog] = useState({})
 
   useEffect(() => {
     let selectedBlog = props.newBlogs.find((blog) => blog._id === id)
     setBlog(selectedBlog)
   }, [blog])
-
-
 
   const deleteBlog = async (blog) => {
     let selectedBlog = props.newBlogs.find((blog) => blog._id === id)
