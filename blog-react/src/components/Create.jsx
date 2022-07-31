@@ -11,7 +11,7 @@ const Create = (props) => {
         <h1 className='createTitle'> Whats on your mind?</h1>
       </header>
       <div>
-        <Form handleChange={props.handleChange} handleSubmit={props.handleSubmit} formState={props.formState}/>
+        <Form handleChange={props.handleChange} handleSubmit={props.handleSubmit} formState={props.formState} refresh={props.refresh}/>
       </div>
     </div>
   )

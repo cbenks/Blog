@@ -8,7 +8,7 @@ import axios from 'axios'
 const Blog = (props) => {
 
   const BASE_URL = 'http://localhost:3001/api'
-  let navigate = useNavigate()
+  const nav = useNavigate()
   let { id } = useParams()
   const [blog, setBlog] = useState({})
 
@@ -18,18 +18,21 @@ const Blog = (props) => {
   }, [blog])
 
   const deleteBlog = async (blog) => {
-    let selectedBlog = props.newBlogs.find((blog) => blog._id === id)
     try {
       let res = await axios.delete(`${BASE_URL}/blogs/${id}`);
-      navigate(`/blogs`)
+      nav(`/blogs`)
     } catch (err) {
       console.log(err.response.data)
     }
   }
 
-
-
-  
+const editBlog = async (blog) => {
+  try {
+    let res = await axios.put(`${BASE_URL}/blogs/${id}`)
+  } catch (err) {
+    console.log(err.response.data)
+  }
+}
 
   return (
 <div className='singleBlog'>

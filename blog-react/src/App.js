@@ -29,6 +29,10 @@ function App() {
 
   const [newBlogs, setNewBlogs] = useState([])
 
+  const refresh = () => {
+    window.location.reload(false)
+  }
+
   const handleChange = (event) => {
     setFormState({
       ...formState,
@@ -47,6 +51,7 @@ function App() {
     const displayBlog = async () => {
       try {
         let res = await axios.get(`${BASE_URL}/blogs`)
+        console.log(res.data)
         setNewBlogs(res.data.blogs)
       } catch (err) {
         console.log(err.response.data)
@@ -72,6 +77,7 @@ function App() {
                 handleSubmit={handleSubmit}
                 formState={formState}
                 initialState={initialState}
+                refresh={refresh}
               />
             }
           />
