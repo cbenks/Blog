@@ -24,6 +24,7 @@ const Blog = (props) => {
     } catch (err) {
       console.log(err.response.data)
     }
+    props.refresh()
   }
 
 const editBlog = async (blog) => {

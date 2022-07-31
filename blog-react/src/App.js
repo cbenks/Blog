@@ -45,6 +45,7 @@ function App() {
     let res = await axios.post(`${BASE_URL}/blogs`, formState)
     setFormState(initialState)
     nav(`/blogs`)
+    refresh()
   }
 
   useEffect(() => {
@@ -77,11 +78,13 @@ function App() {
                 handleSubmit={handleSubmit}
                 formState={formState}
                 initialState={initialState}
-                refresh={refresh}
               />
             }
           />
-          <Route path="/blogs/:id" element={<Blog newBlogs={newBlogs} />} />
+          <Route
+            path="/blogs/:id"
+            element={<Blog newBlogs={newBlogs} refresh={refresh} />}
+          />
         </Routes>
       </main>
       <div></div>
