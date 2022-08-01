@@ -28,7 +28,7 @@ const Blog = (props) => {
     props.refresh()
   }
 
-const editBlog = (blog) => {
+const goToEdit = (blog) => {
   nav(`/blogs/:id/edit`)
 }
 
@@ -40,7 +40,7 @@ const editBlog = (blog) => {
     <h3 className="singleBlogAuthor" >by:{blog.author}</h3>
     <p className='singleBlogBody'>{blog.body}</p>
     <button className="button del" onClick={() =>{if(window.confirm('Delete?')) {deleteBlog()} }}>Delete</button>
-    <button className="button edit" onClick={() => editBlog()}>Edit</button>
+    <button className="button edit" onClick={() => goToEdit()}>Edit</button>
   </div>
 
 </div>

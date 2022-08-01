@@ -21,6 +21,8 @@ function App() {
     author: ''
   }
 
+  const [newBlogs, setNewBlogs] = useState([])
+
   const [blog, setBlog] = useState({})
 
   const [formState, setFormState] = useState({
@@ -29,8 +31,6 @@ function App() {
     body: '',
     author: ''
   })
-
-  const [newBlogs, setNewBlogs] = useState([])
 
   const refresh = () => {
     window.location.reload(false)
