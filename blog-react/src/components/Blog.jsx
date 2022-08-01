@@ -10,8 +10,9 @@ const Blog = (props) => {
   const BASE_URL = 'http://localhost:3001/api'
   const nav = useNavigate()
   let { id } = useParams()
-  const [blog, setBlog] = useState({})
-
+  let blog=props.blog
+  let setBlog=props.setBlog
+  
   useEffect(() => {
     let selectedBlog = props.newBlogs.find((blog) => blog._id === id)
     setBlog(selectedBlog)

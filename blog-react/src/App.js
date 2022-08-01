@@ -21,6 +21,8 @@ function App() {
     author: ''
   }
 
+  const [blog, setBlog] = useState({})
+
   const [formState, setFormState] = useState({
     topic: '',
     title: '',
@@ -84,9 +86,19 @@ function App() {
           />
           <Route
             path="/blogs/:id"
-            element={<Blog newBlogs={newBlogs} refresh={refresh} />}
+            element={
+              <Blog
+                newBlogs={newBlogs}
+                refresh={refresh}
+                blog={blog}
+                setBlog={setBlog}
+              />
+            }
           />
-          <Route path="/blogs/:id/edit" element={<Edit />} />
+          <Route
+            path="/blogs/:id/edit"
+            element={<Edit blog={blog} setBlog={setBlog} />}
+          />
         </Routes>
       </main>
       <div></div>
