@@ -97,7 +97,7 @@ function App() {
           />
           <Route
             path="/blogs/:id/edit"
-            element={<Edit blog={blog} setBlog={setBlog} />}
+            element={<Edit blog={blog} setBlog={setBlog} refresh={refresh} />}
           />
         </Routes>
       </main>

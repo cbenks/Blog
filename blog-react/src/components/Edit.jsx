@@ -14,28 +14,31 @@ const Edit = (props) => {
     })
   }
 
-  // const editBlog = async () => {
-  //   try {
-  //     let res = await axios.put(`${BASE_URL}/blogs/${blog._id}`, blog)
-  //   } catch(err) {
-  //     console.log(err.response.data)
-  //   }
-  // }
+  const editBlog = async () => {
+    try {
+      let res = await axios.put(`${BASE_URL}/blogs/${blog._id}`, blog)
+      nav(`/blogs`)
+    } catch(err) {
+      console.log(err.response.data)
+    }
+    
+    props.refresh()
+  }
   
   return <div>
 
-    <form className="edit" onSubmit>
+    <form className="edit" onSubmit={editBlog}>
       <label htmlFor='topic'>Topic:</label>
       <input id='topic' placeholder='topic..' onChange={editHandleChange} value={blog.topic}/>
       <label htmlFor='title'>Title:</label>
-      <input id='title' placeholder='title...' onChange={editHandleChange}/>
+      <input id='title' placeholder='title...' onChange={editHandleChange} value={blog.title}/>
 
       <div className='author'>
         <label htmlFor='author'>Author:</label>
-        <input id='author' placeholder='authored by...' onChange={editHandleChange} />
+        <input id='author' placeholder='authored by...' onChange={editHandleChange} value={blog.author} />
       </div>
       <label htmlFor='body'></label>
-      <textarea id='body' className='blog' placeholder='...2500 characters or less..' rows='50' cols='80' maxLength='2500' onChange={editHandleChange} />
+      <textarea id='body' className='blog' placeholder='...2500 characters or less..' rows='50' cols='80' maxLength='2500' onChange={editHandleChange} value={blog.body} />
       <button className='submit' type='submit'>Submit</button>
     </form>
   </div>
