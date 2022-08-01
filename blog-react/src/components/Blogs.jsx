@@ -16,7 +16,7 @@ const showBlog = (blog) => {
   {newBlogs.map((blog) => (
     <div className='allBlogs' onClick={() => showBlog(blog)} key={blog._id}>
     <h2 className='allBlogsTitle'>{blog.title}</h2>
-    <h3 className='allBlogsAuthor'>authored by:{blog.author}</h3>
+    <h3 className='allBlogsAuthor'>By:{blog.author}</h3>
     </div>
   ))}
 </div>

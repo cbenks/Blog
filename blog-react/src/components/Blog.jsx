@@ -28,11 +28,7 @@ const Blog = (props) => {
   }
 
 const editBlog = async (blog) => {
-  try {
-    let res = await axios.put(`${BASE_URL}/blogs/${id}`)
-  } catch (err) {
-    console.log(err.response.data)
-  }
+  nav(`/blogs/:id/edit`)
 }
 
   return (
@@ -43,7 +39,7 @@ const editBlog = async (blog) => {
     <h3 className="singleBlogAuthor" >by:{blog.author}</h3>
     <p className='singleBlogBody'>{blog.body}</p>
     <button className="button del" onClick={() =>{if(window.confirm('Delete?')) {deleteBlog()} }}>Delete</button>
-    <button className="button edit">Edit</button>
+    <button className="button edit" onClick={() => editBlog()}>Edit</button>
   </div>
 
 </div>

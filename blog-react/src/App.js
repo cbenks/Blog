@@ -8,6 +8,7 @@ import Blogs from './components/Blogs'
 import Topics from './components/Topics'
 import Create from './components/Create'
 import Blog from './components/Blog'
+import Edit from './components/Edit'
 
 const BASE_URL = 'http://localhost:3001/api'
 
@@ -85,6 +86,7 @@ function App() {
             path="/blogs/:id"
             element={<Blog newBlogs={newBlogs} refresh={refresh} />}
           />
+          <Route path="/blogs/:id/edit" element={<Edit />} />
         </Routes>
       </main>
       <div></div>
