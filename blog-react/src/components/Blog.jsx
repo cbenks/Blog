@@ -27,7 +27,7 @@ const Blog = (props) => {
     props.refresh()
   }
 
-const editBlog = async (blog) => {
+const editBlog = (blog) => {
   nav(`/blogs/:id/edit`)
 }
 
