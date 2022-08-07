@@ -18,8 +18,8 @@ router.delete('/blogs/:id', controllers.deleteBlog)
 
 //topic
 
-router.post('/topics', controllers.createTopic)
+// router.post('/topics', controllers.createTopic)
 
-router.get('/topics', controllers.readAllTopics)
+// router.get('/topics', controllers.readAllTopics)
 
 module.exports = router
