@@ -22,8 +22,6 @@ function App() {
     author: ''
   }
 
-  const [topics, setTopics] = useState([])
-
   const [newBlogs, setNewBlogs] = useState([])
 
   const [blog, setBlog] = useState({})
@@ -78,17 +76,6 @@ function App() {
   //   displayTopic()
   // }, [])
 
-  const getTopics = async () => {
-    try {
-      let res = await axios.get(`${BASE_URL}/topics`)
-      console.log(res.data)
-      setTopics(res.data)
-    } catch (err) {
-      console.log(err.response.data.topics)
-    }
-  }
-  getTopics()
-
   return (
     <div className="App">
       <header className="appHead">
@@ -98,7 +85,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/blogs" element={<Blogs newBlogs={newBlogs} />} />
-          <Route path="/topics" element={<Topics topics={topics} />} />
+          <Route path="/topics" element={<Topics />} />
           <Route
             path="/create"
             element={
