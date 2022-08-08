@@ -116,19 +116,23 @@ margin-left: 4ch;
   margin-left: 150px;
   font-family: 'KoHo', sans-serif;
   text-align: center;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
-/* #topic {
-
+#topic {
+margin-right:100%;
 }
 
-.title{
-
+#title{
+margin-right:100%;
 }
 
 .author {
- 
-} */
+margin-right:100%;
+} 
 
 
 .blog{
@@ -150,6 +154,23 @@ margin-left: 4ch;
 .editBack{
   text-decoration: none;
   border: 2px solid black;
+  font-family: 'Sofadi One', cursive;
+  color: black;
+}
+
+
+/* topics */
+
+.topicsDisplay{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.topicsHeading{
+  text-align: center;
   font-family: 'Sofadi One', cursive;
   color: black;
 }

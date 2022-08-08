@@ -27,10 +27,10 @@ const Topics = () => {
 
   return(
     <div>
-          <h1>Topics</h1> 
+          <h1 className='topicsHeading'>Topics</h1> 
       <div>
         {topics.map((topic) => (
-          <div key={topic._id} >
+          <div className='topicsDisplay' key={topic._id} >
             <h3>{topic.category}</h3>
           </div>
         ))}

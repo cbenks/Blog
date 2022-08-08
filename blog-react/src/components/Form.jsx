@@ -2,13 +2,13 @@ const Form = (props) => {
   return(
     <div className='newBlog'>
     <form onSubmit={props.handleSubmit}>
-      <label htmlFor='topic'>Topic:</label>
+      <label htmlFor='topic'></label>
       <input id='topic' placeholder='topic..' onChange={props.handleChange}/>
-      <label htmlFor='title'>Title:</label>
+      <label htmlFor='title'></label>
       <input id='title' placeholder='title...' onChange={props.handleChange}/>
 
       <div className='author'>
-        <label htmlFor='author'>Author:</label>
+        <label htmlFor='author'></label>
         <input id='author' placeholder='authored by...' onChange={props.handleChange} />
       </div>
       <label htmlFor='body'></label>
