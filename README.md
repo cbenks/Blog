@@ -34,6 +34,8 @@ This is going to be a blog site. Blog posts will be able to be created, deleted,
 
 ## _Screenshots_
 
----
+## ![CreateBlogForm](https://i.imgur.com/eW4ivWM.png)
+
+![DisplayingAllBlogs](https://i.imgur.com/U2Rqq4r.png)
 
 ## _Credits_
