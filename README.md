@@ -10,7 +10,7 @@
 
 ## _Description_
 
-This is going to be a blog site. Blog posts will be able to be created, deleted, and edited.
+This is my first MERN stack project. At the moment it is a bare-bones blog app with full CRUD functionality.
 
 ---
 
