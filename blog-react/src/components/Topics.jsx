@@ -1,24 +1,27 @@
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 const Topics = () => {
 
   const BASE_URL = 'http://localhost:3001/api'
 
   const [topics, setTopics] = useState([''])
 
-  const getTopics = async () => {
-    try {
+
+  useEffect(() => {
+    const getTopics = async () => {
+      try {
       let res = await axios.get(`${BASE_URL}/topics`)
-      console.log(res.data)
-      setTopics(res.data)
-    } catch (err) {
+      console.log(res.data.topics)
+      setTopics(res.data.topics)
+      } catch (err) {
       console.log(err.response.data.topics)
+      }
     }
+    getTopics()
   }
-  // getTopics()
-
-
+  ,[]
+)
 
 
 
@@ -27,7 +30,9 @@ const Topics = () => {
           <h1>Topics</h1> 
       <div>
         {topics.map((topic) => (
-          <h3>{topic.category}</h3>
+          <div key={topic._id} >
+            <h3>{topic.category}</h3>
+          </div>
         ))}
       </div>
     </div>
