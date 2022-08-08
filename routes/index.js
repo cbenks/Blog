@@ -20,6 +20,6 @@ router.delete('/blogs/:id', controllers.deleteBlog)
 
 // router.post('/topics', controllers.createTopic)
 
-// router.get('/topics', controllers.readAllTopics)
+router.get('/topics', controllers.readAllTopics)
 
 module.exports = router

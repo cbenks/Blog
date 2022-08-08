@@ -74,23 +74,23 @@ const deleteBlog = async (req, res) => {
 //   }
 // }
 
-// const readAllTopics = async (req, res) => {
-//   try {
-//     const topics = await Topic.find()
-//     return res.status(201).json({
-//       topics
-//     })
-//   } catch (error) {
-//     return res.status(500).json({ error: error.message })
-//   }
-// }
+const readAllTopics = async (req, res) => {
+  try {
+    const topics = await Topic.find()
+    return res.status(201).json({
+      topics
+    })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
 
 module.exports = {
   createBlog,
   // createTopic,
   readBlog,
   readAllBlogs,
-  // readAllTopics,
+  readAllTopics,
   updateBlog,
   deleteBlog
 }

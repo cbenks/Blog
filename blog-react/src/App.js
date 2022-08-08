@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import Nav from './pages/Nav'
+import Home from './pages/Home'
 import Blogs from './components/Blogs'
 import Topics from './components/Topics'
 import Create from './components/Create'
@@ -20,6 +21,8 @@ function App() {
     body: '',
     author: ''
   }
+
+  const [topics, setTopics] = useState([])
 
   const [newBlogs, setNewBlogs] = useState([])
 
@@ -55,7 +58,6 @@ function App() {
     const displayBlog = async () => {
       try {
         let res = await axios.get(`${BASE_URL}/blogs`)
-        console.log(res.data)
         setNewBlogs(res.data.blogs)
       } catch (err) {
         console.log(err.response.data)
@@ -64,6 +66,29 @@ function App() {
     displayBlog()
   }, [])
 
+  // useEffect(() => {
+  //   const displayTopic = async () => {
+  //     try {
+  //       let res = await axios.get(`${BASE_URL}/topics`)
+  //       setTopics(res.data.topics)
+  //     } catch (err) {
+  //       console.log(err.response.topics)
+  //     }
+  //   }
+  //   displayTopic()
+  // }, [])
+
+  const getTopics = async () => {
+    try {
+      let res = await axios.get(`${BASE_URL}/topics`)
+      console.log(res.data)
+      setTopics(res.data)
+    } catch (err) {
+      console.log(err.response.data.topics)
+    }
+  }
+  getTopics()
+
   return (
     <div className="App">
       <header className="appHead">
@@ -71,8 +96,9 @@ function App() {
       </header>
       <main>
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/blogs" element={<Blogs newBlogs={newBlogs} />} />
-          <Route path="/topics" element={<Topics />} />
+          <Route path="/topics" element={<Topics topics={topics} />} />
           <Route
             path="/create"
             element={

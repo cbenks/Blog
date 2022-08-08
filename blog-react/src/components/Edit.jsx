@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Edit = (props) => {
   const BASE_URL = 'http://localhost:3001/api'
@@ -13,21 +14,20 @@ const Edit = (props) => {
       [event.currentTarget.id]: event.currentTarget.value
     })
   }
+  
 
   const editBlog = async () => {
     try {
       let res = await axios.put(`${BASE_URL}/blogs/${blog._id}`, blog)
-      nav(`/blogs`)
+      nav(`/home`)
     } catch(err) {
       console.log(err.response.data)
     }
-    
-    props.refresh()
   }
   
   return <div>
-
-    <form className="edit" onSubmit={editBlog}>
+    <Link className='editBack' to='/blogs'>Back to blogs</Link>
+    <form className="edit" onSubmit={editBlog} >
       <label htmlFor='topic'>Topic:</label>
       <input id='topic' placeholder='topic..' onChange={editHandleChange} value={blog.topic}/>
       <label htmlFor='title'>Title:</label>
