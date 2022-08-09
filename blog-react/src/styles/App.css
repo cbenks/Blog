@@ -27,10 +27,10 @@ background-color: rgb(52, 240, 254);
   font-family: 'Poppins', sans-serif;
 }
 
- .blogsHeading {
+.blogsHeading {
 text-align: left;
 margin-left: 4ch;
- }
+}
 
 .blogComp {
   text-align: center;
@@ -51,13 +51,13 @@ margin-left: 4ch;
 
 /* single blog */
 
-.singleBlog {
-  margin: 3ch;
-  width: 80%;
-}
-
 .showcaseBlogs {
-  margin-left: 25ch;
+  margin: 15%;
+  width: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .singleBlogTitle {
@@ -75,9 +75,9 @@ margin-left: 4ch;
 }
 
 .button {
-  margin: 10px;
   font-family: 'Poppins', sans-serif;
   background-color: rgb(57, 230, 236);
+  margin: 10px;
 }
 
 

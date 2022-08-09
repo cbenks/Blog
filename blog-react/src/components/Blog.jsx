@@ -40,7 +40,7 @@ const goToEdit = (blog) => {
     <h3 className="singleBlogAuthor" >by:{blog.author}</h3>
     <p className='singleBlogBody'>{blog.body}</p>
     <button className="button del" onClick={() =>{if(window.confirm('Delete?')) {deleteBlog()} }}>Delete</button>
-    <button className="button edit" onClick={() => goToEdit()}>Edit</button>
+    <button className="button ed" onClick={() => goToEdit()}>Edit</button>
   </div>
 
 </div>
