@@ -11,8 +11,8 @@ import Create from './components/Create'
 import Blog from './components/Blog'
 import Edit from './components/Edit'
 
-// const BASE_URL = 'http://localhost:3001/api'
-const BASE_URL = 'https://sleepy-garden-70328.herokuapp.com/'
+const BASE_URL = 'http://localhost:3001/api'
+// const BASE_URL = 'https://sleepy-garden-70328.herokuapp.com/'
 
 function App() {
   const nav = useNavigate()
